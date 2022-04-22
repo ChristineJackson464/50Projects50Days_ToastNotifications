@@ -20,7 +20,7 @@ function createNotification (message = null, type = null) {
     const notif = document.createElement('div')
 
     notif.classList.add('toast')
-    notif.classList.add(type ? type : getRandomType)
+    notif.classList.add(type ? type : getRandomType())
 
     notif.innerText = message ? message : getRandomMessage()    
     toasts.appendChild(notif)
@@ -35,5 +35,5 @@ function getRandomMessage() {
 }
 
 function getRandomType() {
-    return type[Math.floor(Math.random() * types.length)]
+    return types[Math.floor(Math.random() * types.length)]
 }
